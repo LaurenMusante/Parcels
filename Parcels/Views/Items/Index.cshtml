@@ -9,8 +9,8 @@
 <ul>
     @foreach(Parcel parcel in Model)
     {
-        <li>Volume: @parcel.Volume()</li>
-        <li>Price: @parcel.CostToShip()</li>
+        <li>Volume: @parcel.Volume() cubic cm.</li>
+        <li>Price: $@parcel.CostToShip()</li>
 
     }
 </ul>

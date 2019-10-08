@@ -30,7 +30,7 @@ namespace ParcelInput.Models
 
         public int CostToShip()
         {
-           return  _Cost += _TrueVolume *2;  
+           return  _Cost = _TrueVolume/300;  
         }
 
     

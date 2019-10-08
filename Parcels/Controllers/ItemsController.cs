@@ -6,19 +6,24 @@ namespace ParcelInput.Controllers
 {
  public class ItemsController : Controller
  {
-     [HttpGet("/items")]
-     public ActionResult Index()
+    [HttpGet("/items")]
+    public ActionResult Index()
      {
       List<Parcel> allParcels = Parcel.GetAll();
       return View(allParcels);
      }
 
-     [HttpPost("/items")]
-     public ActionResult Create(int length, int width, int height)
+    [HttpPost("/items")]
+    public ActionResult Create(int length, int width, int height)
      {
          Parcel newParcel = new Parcel(length, width, height);
          return RedirectToAction("Index");
      }
+    [HttpGet("/items/new")]
+    public ActionResult CreateForm()
+    {
+        return View();
+    }
  }
 }
 
