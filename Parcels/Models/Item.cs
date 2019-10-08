@@ -5,20 +5,20 @@ namespace ParcelInput.Models
     public class Parcel
     {
         
-        private int _Length;
-        private int _Width; 
-        private int _Height;
-        private int _Cost;
-        private int _TrueVolume;
+        public int Length { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public int Cost { get; set; }
+        public int TrueVolume { get; set; }
         private static List<Parcel> _orders = new List<Parcel> {};
 
         public Parcel (int length, int width, int height)
         {
-            _Length = length;
-            _Width = width;
-            _Height = height;
-            _Cost = 0;
-            _TrueVolume = 0;
+            Length = length;
+            Width = width;
+            Height = height;
+            Cost = 0;
+            TrueVolume = 0;
             _orders.Add(this);
         }
 
@@ -30,14 +30,14 @@ namespace ParcelInput.Models
 
         public int CostToShip()
         {
-           return  _Cost = _TrueVolume/300;  
+           return  Cost = TrueVolume/300;  
         }
 
     
         public int Volume()
         {
-            _TrueVolume = _Length * _Width * _Height;
-            return _TrueVolume; 
+            TrueVolume = Length * Width * Height;
+            return TrueVolume; 
         }
 
    }
